@@ -22,6 +22,12 @@ var io=socket.listen(server);
 
 io.on('connection',(socket)=>{
     console.log('new client connected.');
+
+    socket.emit('mess','Data from server');
+    
+    socket.on('disconnect',()=>{
+    	console.log('A client disconnected.');
+    });
 });
 server.listen(3000, () => {
 	console.log("Server is up and listering on 3000");

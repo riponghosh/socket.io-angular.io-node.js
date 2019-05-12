@@ -23,6 +23,6 @@ var io=socket.listen(server);
 io.on('connection',(socket)=>{
     console.log('new client connected.');
 });
-app.listen(3000, () => {
+server.listen(3000, () => {
 	console.log("Server is up and listering on 3000");
 });
